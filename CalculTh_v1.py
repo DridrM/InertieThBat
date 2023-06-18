@@ -22,14 +22,30 @@ class CalculTh :
     __init__()
     """
 
-    def __init__(self, composant, delta_t, dx = 0.001, dt = 18.0) :
+    def __init__(self, composant : Composant,
+                 delta_t : float, dx = 0.001, dt = 18.0) -> None :
         
         """
-        Initialisation des paramètres :
+        Description :
+
+        Définit :
+        - 
+        - 
+        - 
+        ----------------------------------------------------------------
+        
+        Arguments :
+
+        - 
+        - 
+        - 
         """
 
         # Epaisseur totale du mur
         self.ep_comp = composant.ep_comp()
+
+        # Epaisseurs des materiaux
+        self.ep_materiaux = composant.ep_mat
 
         # Vecteur des coefficients de diffusion
         

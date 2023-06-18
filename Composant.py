@@ -76,7 +76,7 @@ class Composant :
         else :
             self.ep_mat = ep
     
-    def rth_materiaux(self) -> None :
+    def rth_materiaux(self) -> tuple :
 
         """
         Description :
