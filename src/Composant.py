@@ -1,4 +1,4 @@
-from InertieThBat.Materiau import Materiau
+from Materiau import Materiau
 
 class Composant :
 
@@ -25,19 +25,16 @@ class Composant :
         - le tuple materiaux contenant les objets du type Materiaux
             Placer le materiau le plus à l'extérieur en premier, et le plus à l'intérieur en dernier
         - Le tuple ep_mat vide dans un premier temps, stockant les épaisseurs des matériaux
-        - Le tuple rth_mat vide dans un premier temps, stockant les résistances thermiques des matériaux
         ----------------------------------------------------------------
         
         Arguments :
 
         - materiaux -> tuple
         - ep_mat -> tuple
-        - rth_mat -> tuple
         """
         
         self.materiaux = materiaux
         self.ep_mat = tuple()
-        self.rth_mat = tuple()
 
     def test(self, values : tuple) -> bool :
         
@@ -86,19 +83,14 @@ class Composant :
         
         Arguments : None
         """
-        
-        lambda_materiaux = (materiau._lambda for materiau in self.materiaux)
-        
-        self.rth_mat = tuple(ep/_lambda for ep, _lambda in zip(self.ep_mat, lambda_materiaux))
-        
-        return self.rth_mat
+
+        return tuple(ep/_lambda for ep, _lambda in zip(self.ep_mat, self._lambda_comp()))
     
     def ep_comp(self) -> float :
 
         """
         Description :
-        
-        
+
         Renvoie la somme des épaisseurs des materiaux
         ----------------------------------------------------------------
         
@@ -118,8 +110,7 @@ class Composant :
 
         """
         Description :
-        
-        
+
         Renvoie la somme des  résistances thermiques des materiaux
         ----------------------------------------------------------------
         
@@ -135,3 +126,30 @@ class Composant :
         else :
             return sum(self.rth_materiaux())
 
+    def _lambda_comp(self) -> tuple :
+
+        """
+        Description :
+
+        Renvoie la liste des coefficients de conductivité thermique de la composition pour chaque materiau
+        de l'intérieur vers l'extérieur
+        ----------------------------------------------------------------
+
+        Arguments : None
+        """
+
+        return tuple(materiau._lambda for materiau in self.materiaux)
+
+    def rho_cp_comp(self) -> tuple :
+
+        """
+        Description :
+
+        Renvoie la liste de rho*cp (masse volumique*capacité_calorifique) de la composition pour chaque materiau
+        de l'intérieur vers l'extérieur
+        ----------------------------------------------------------------
+
+        Arguments : None
+        """
+
+        return tuple(materiau.rho*materiau.cp for materiau in self.materiaux)

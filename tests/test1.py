@@ -2,8 +2,8 @@ from os import chdir
 
 chdir("C:\\Users\\Hadrien utilisateur\\Documents\\Python Projects")
 
-from InertieThBat.Materiau import Materiau
-from InertieThBat.Composant import Composant
+from .Materiau import Materiau
+from .Composant import Composant
 
 m1 = Materiau(2500, 800, 0.145)
 m2 = Materiau(1650, 900, 0.036)

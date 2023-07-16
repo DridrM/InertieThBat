@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import InertieThBat.Composant
 
-from InertieThBat.Composant import Composant
+from Composant import Composant
 
 """Seconde version à deux milieux, résolution explicite"""
 
@@ -118,6 +117,20 @@ r_1 = k_1*(dt/(dx**2))
 
 ## Materiau 2
 r_2 = k_2*(dt/(dx**2))
+
+
+    def coeff_car_diff() -> list :
+
+        """
+        Description :
+
+
+        ----------------------------------------------------------------
+
+        Arguments :
+
+        -
+        """
 
 
 """ 4/ Conditions aux limites """
