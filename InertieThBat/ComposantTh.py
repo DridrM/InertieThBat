@@ -1,4 +1,4 @@
-from Materiau import Materiau
+from InertieThBat.MateriauTh import Materiau
 
 class Composant :
 
@@ -47,7 +47,7 @@ class Composant :
 
         Arguments :
 
-        - *values -> InertieThBat.Materiau.Materiau
+        - *values -> InertieThBat.MateriauTh.Materiau
         """
         
         return all(isinstance(value, Materiau) for value in values)

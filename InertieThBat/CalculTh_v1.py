@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from Composant import Composant
+from InertieThBat.ComposantTh import Composant
 
 """Seconde version à deux milieux, résolution explicite"""
 
-class CalculTh :
+class Calcul :
 
     """
     Description :
