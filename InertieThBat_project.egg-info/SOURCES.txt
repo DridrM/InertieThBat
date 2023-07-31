@@ -1,0 +1,10 @@
+setup.py
+InertieThBat/CalculTh_v0.py
+InertieThBat/CalculTh_v1.py
+InertieThBat/ComposantTh.py
+InertieThBat/MateriauTh.py
+InertieThBat/__init__.py
+InertieThBat_project.egg-info/PKG-INFO
+InertieThBat_project.egg-info/SOURCES.txt
+InertieThBat_project.egg-info/dependency_links.txt
+InertieThBat_project.egg-info/top_level.txt
