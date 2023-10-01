@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from InertieThBat.ComposantTh import Composant
 
-"""Seconde version à deux milieux, résolution explicite"""
+"""Seconde version à plusieurs milieux, résolution explicite"""
 
 class Calcul :
 
@@ -43,13 +43,13 @@ class Calcul :
         # Epaisseur totale du mur
         self.ep_comp = composant.ep_comp()
 
-        # Epaisseurs des materiaux
+        # Tuple des epaisseurs des materiaux
         self.ep_materiaux = composant.ep_mat
 
-        # Vecteur des coefficients de diffusion
+        # Tuple des coefficients thermiques volumiques
+        self.rho_cp_comp = composant.rho_cp_comp()
         
-        
-        # Duree de la simulation thermique
+        # Duree de la simulation thermique en secondes
         self.delta_t = delta_t
 
         # Precision spatiale simulation
@@ -58,7 +58,11 @@ class Calcul :
         # Precision temporelle simulation
         self.dt = dt
 
-        
+        # Nombre iterations temporelles
+        self.i_t = int(self.delta_t/self.dt)
+
+        # Tuple taille des vecteurs
+        self.tuple_n = (int(ep/self.dx) for ep in self.ep_materiaux)
         
 """ 1/ Discretisation """
 
