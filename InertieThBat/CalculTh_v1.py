@@ -22,7 +22,9 @@ class Calcul :
     """
 
     def __init__(self, composant : Composant,
-                 delta_t : float, dx = 0.001, dt = 18.0) -> None :
+                 delta_t : float,
+                 dx = 0.001,
+                 dt = 18.0) -> None :
         
         """
         Description :
@@ -63,6 +65,9 @@ class Calcul :
 
         # Tuple taille des vecteurs
         self.tuple_n = (int(ep/self.dx) for ep in self.ep_materiaux)
+
+        # Coefficient carracteristique de diffusion
+        # self.r =
         
 """ 1/ Discretisation """
 

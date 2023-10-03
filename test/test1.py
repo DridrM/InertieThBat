@@ -1,5 +1,6 @@
 import InertieThBat.MateriauTh as mth
 import InertieThBat.ComposantTh as cth
+import InertieThBat.ConditionsLimitesTh as clth
 
 # Creation de deux objets 'Materiau' m1 et m2
 m1 = mth.Materiau(2500, 800, 0.145)
@@ -31,3 +32,12 @@ c2.ep_materiaux(0.05, 0.10)
 
 # Test epaisseur c2, renvoie une alerte
 c2.ep_comp()
+
+# Test du module conditions aux limites
+cl = clth.ConditionsLimites(25, 16, 21, 19)
+print(cl.vec_cl_ext().size)
+print(cl.vec_cl_int().size)
+print(cl.vec_cl_ext().max())
+print(cl.vec_cl_int().max())
+print(cl.vec_cl_ext().min())
+print(cl.vec_cl_int().min())
